@@ -1,0 +1,5 @@
+1. Data is not secure – Any function can directly access/modify variables like balance (no private/protected).
+2. No encapsulation – Data (struct) and behavior (functions) are separate, not grouped together.
+3. No code reuse – If you add new account types, you must rewrite deposit/withdraw logic (no inheritance).
+4. Poor scalability – As the program grows, managing which function modifies which data becomes messy.
+5. Hard maintenance – Bugs are harder to track and fixing one part may break others due to open access.
