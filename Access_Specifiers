@@ -1,0 +1,59 @@
+1. Public :-
+--> Members declared as public are accessible from anywhere (inside or outside the class).
+Example :-
+class Account {
+public:
+    int balance;   // public data
+    void deposit(int amount) { 
+        balance += amount; 
+  }
+};
+int main() {
+    Account acc;
+    acc.balance = 1000;
+    acc.deposit(500);
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+2. Private :-
+--> Members declared as private are accessible only inside the class.
+--> Default access specifier for class members.
+--> Provides data security by hiding details.
+Example :-
+class Account {
+private:
+    int balance;   //it is the private member of the class Account
+public:
+    void deposit(int amount) { 
+        balance += amount; 
+  }
+    int getBalance() { 
+        return balance; 
+  }
+};
+
+int main() {
+    Account acc;
+    // acc.balance = 1000; is not allowed here
+    acc.deposit(500);
+    cout << acc.getBalance();
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+3. Protected :-
+--> Members declared as protected are like private but are also accessible in derived (child) classes.
+--> Useful for inheritance.
+Example :-
+class Account {
+protected:
+    int balance;
+public:
+    void deposit(int amount) { 
+        balance += amount; 
+  }
+};
+class SavingsAccount : public Account {
+public:
+    void addInterest() { 
+        balance += balance * 0.05; 
+  } 
+};
+---------------------------------------------------------------------------------------------------------------------------------------
